@@ -2,8 +2,8 @@
 #include "node.h"
 
 void nodePrint(Node *theNode){
-  printf("Node : %d ", theNode->tag);
-  printf("Crds: %f %f ", theNode->coord[0], theNode->coord[1]);
+  printf("Node: %d, ", theNode->tag);
+  printf("Coords: %f %f, ", theNode->coord[0], theNode->coord[1]);
   printf("Disp: %f %f %f \n", theNode->disp[0], theNode->disp[1], theNode->disp[2]);
 }
 

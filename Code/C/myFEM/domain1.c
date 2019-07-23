@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-// #include <stdbool.h>
 #include "domain1.h"
 #include "node.h"
 #include "constraint.h"
@@ -9,6 +8,7 @@
 void domainPrint(Domain *theDomain) {
   printf("The Nodes:\n");
   domainPrintNodes(theDomain);
+  printf("The Constraints:\n");
   domainPrintConstraints(theDomain);
 }
 
@@ -67,18 +67,18 @@ void domainAddConstraint(Domain *theDomain, int tag, bool fix1, bool fix2, bool 
 
   // get size of current array and max size
   int numConstraints = theDomain->numConstraints;
-  int maxNumNodes = theDomain->maxNumNodes;
+  int maxNumConstraints = theDomain->maxNumConstraints;
 
   // if current size = maxSize, we need to increase storage capacity
-  if (numConstraints == maxNumNodes) {
-    Constraint **theNextConstraints = (Constraint **)malloc((maxNumNodes+10)*sizeof(Constraint*));
+  if (numConstraints == maxNumConstraints) {
+    Constraint **theNextConstraints = (Constraint **)malloc((maxNumConstraints+10)*sizeof(Constraint*));
     for (int i=0; i<numConstraints; i++) 
       theNextConstraints[i] = theDomain->theConstraints[i];
-    for (int i=numConstraints; i<maxNumNodes+10; i++)
+    for (int i=numConstraints; i<maxNumConstraints+10; i++)
       theNextConstraints[i] = 0;
-    if (maxNumNodes != 0)
+    if (maxNumConstraints != 0)
       free(theDomain->theConstraints);
-    theDomain->maxNumNodes = maxNumNodes+10;
+    theDomain->maxNumConstraints = maxNumConstraints+10;
     theDomain->theConstraints= theNextConstraints;
   }
 
