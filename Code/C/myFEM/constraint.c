@@ -1,10 +1,10 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include "constraint.h"
-// #include <stdbool.h>
 
 void constraintPrint(Constraint *theConstraint){
-  printf("Node: %d ", theConstraint->tag);
-  printf("Fixity: %d %d %d ", theConstraint->fixity[0], theConstraint->fixity[1], theConstraint->fixity[2]);
+  printf("Node: %d, ", theConstraint->tag);
+  printf("Fixity: %d %d %d\n", theConstraint->fixity[0], theConstraint->fixity[1], theConstraint->fixity[2]);
 }
 
 void constraintSetup(Constraint *theConstraint, int tag, bool fix1, bool fix2, bool fix3) {

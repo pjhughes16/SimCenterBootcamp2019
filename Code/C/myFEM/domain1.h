@@ -1,6 +1,5 @@
 #include "node.h"
 #include "constraint.h"
-// #include <stdbool.h>
 
 typedef struct struct_domain {
   Node **theNodes;
@@ -8,6 +7,7 @@ typedef struct struct_domain {
   int numNodes;
   int maxNumNodes;
   int numConstraints;
+  int maxNumConstraints;
 } Domain;
 
 void domainPrint(Domain *theDomain);
