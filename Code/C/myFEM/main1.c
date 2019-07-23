@@ -1,5 +1,7 @@
-#include "node.h"
 #include "domain1.h"
+#include "node.h"
+#include "constraint.h"
+// #include <stdbool.h>
 
 int main(int argc, char **argv) {
   Domain theDomain;
@@ -12,8 +14,8 @@ int main(int argc, char **argv) {
   domainAddNode(&theDomain, 1, 0.0, 0.0);
   domainAddNode(&theDomain, 2, 1.0, 0.0);
   domainAddNode(&theDomain, 3, 2.0, 0.0);
+  domainAddNode(&theDomain, 4, 1.0, 1.0);
   
-  domainAddConstraint(&theDomain, 4, 1.0, 1.0);
   domainAddConstraint(&theDomain, 1, 1, 1, 0);
   domainAddConstraint(&theDomain, 2, 1, 1, 0);
   domainAddConstraint(&theDomain, 3, 1, 1, 1);

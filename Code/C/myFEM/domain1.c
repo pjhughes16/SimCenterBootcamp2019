@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+// #include <stdbool.h>
 #include "domain1.h"
 #include "node.h"
 #include "constraint.h"
@@ -55,7 +56,7 @@ Node *domainGetNode(Domain *theDomain, int nodeTag) {
     } 
   }
   return NULL;
-}}
+}
 
 // constraint methods ====================================================================================================
 void domainAddConstraint(Domain *theDomain, int tag, bool fix1, bool fix2, bool fix3) {
@@ -70,15 +71,15 @@ void domainAddConstraint(Domain *theDomain, int tag, bool fix1, bool fix2, bool 
 
   // if current size = maxSize, we need to increase storage capacity
   if (numConstraints == maxNumNodes) {
-    Constraint **theNextNodes = (Constraint **)malloc((maxNumNodes+10)*sizeof(Constraint*));
+    Constraint **theNextConstraints = (Constraint **)malloc((maxNumNodes+10)*sizeof(Constraint*));
     for (int i=0; i<numConstraints; i++) 
-      theNextNodes[i] = theDomain->theConstraints[i];
+      theNextConstraints[i] = theDomain->theConstraints[i];
     for (int i=numConstraints; i<maxNumNodes+10; i++)
-      theNextNodes[i] = 0;
+      theNextConstraints[i] = 0;
     if (maxNumNodes != 0)
       free(theDomain->theConstraints);
     theDomain->maxNumNodes = maxNumNodes+10;
-    theDomain->theNodes= theNextNodes;
+    theDomain->theConstraints= theNextConstraints;
   }
 
   // add the constraint
@@ -89,16 +90,16 @@ void domainAddConstraint(Domain *theDomain, int tag, bool fix1, bool fix2, bool 
 void domainPrintConstraints(Domain *theDomain) {
   int numConstraints = theDomain->numConstraints;
   for (int i=0; i<theDomain->numConstraints; i++)
-    constraintPrint(theDomain->theNodes[i]);
+    constraintPrint(theDomain->theConstraints[i]);
 }
 
 Constraint *domainGetConstraint(Domain *theDomain, int nodeTag) {
   int numConstraints = theDomain->numConstraints;
   for (int i=0; i<numConstraints; i++) {
-    Constraint *theCurrentConstraint = theDomain->theNodes[i];
+    Constraint *theCurrentConstraint = theDomain->theConstraints[i];
     if (theCurrentConstraint->tag == nodeTag) {
       return theCurrentConstraint;
     } 
   }
   return NULL;
-}}
+}
