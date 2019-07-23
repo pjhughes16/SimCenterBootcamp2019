@@ -1,5 +1,6 @@
 #include "node.h"
 #include "constraint.h"
+// #include <stdbool.h>
 
 typedef struct struct_domain {
   Node **theNodes;

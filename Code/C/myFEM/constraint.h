@@ -2,6 +2,7 @@
 #define _CONSTRAINT 
 
 #include <stdio.h>
+// #include <stdbool.h>
 
 typedef struct constraint {
   int tag;
