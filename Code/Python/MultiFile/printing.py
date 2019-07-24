@@ -1,5 +1,6 @@
 def scalarprint(x):
-    pass
+    print("The scalar value is {}".format(x))
 
 def vectorprint(x):
-    pass
+    print("The vector value is {}".format(x))
+
