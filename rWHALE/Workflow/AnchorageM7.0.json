@@ -1,0 +1,58 @@
+{
+   "Name": "AnchorageM7.0",
+   "Author": "Wael Elhaddad",
+   "WorkflowType": "Regional Simulation of San Francisco Bay Area",
+   "buildingFile":"buildings.json",
+   "Applications": {
+      "Buildings": {
+         "BuildingApplication": "GenericBimDatabase",
+         "ApplicationData": {
+               "Min": "11",
+               "Max":"13",
+               "buildingsFile":"../build/data/AnchorageBuildings.csv"
+            }
+      },
+      "Events": [
+         {
+            "EventClassification": "Earthquake",
+            "EventApplication": "NNGM",
+            "ApplicationData": {
+                "groundMotions": "../build/data/AnchorageM7GMs.json",
+                "recordsFolder":"../build/data/AnchorageM7GM"
+            }
+         }
+      ],
+      "Modeling": {
+            "ModelingApplication": "MDOF-LU",
+            "ApplicationData": {
+   	       "hazusData":"../build/data/HazusData.txt"
+	    }
+      },
+      "EDP": {
+            "EDPApplication": "StandardEarthquakeEDP",
+            "ApplicationData": {}
+      },
+      "Simulation": {
+         "SimulationApplication": "OpenSees",
+         "ApplicationData": {}
+      },
+      "UQ-Simulation": {
+         "UQApplication": "Dakota-FEM",
+         "ApplicationData": {
+            "samples": 4,
+            "seed": 1,
+            "concurrency": 4,
+            "keepSamples": true
+         }
+      },
+      "Damage&Loss": {
+         "Damage&LossApplication": "FemaP58-LU",
+         "ApplicationData": {
+	    "filenameSettings":"../build/data/settings.ini",
+   	    "pathCurves":"../build/data/ATCCurves/",
+   	    "pathNormative":"../build/data/normative/"
+         }
+      }
+   }
+}
+

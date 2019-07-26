@@ -1,0 +1,135 @@
+{
+	"GroundMotion": [{
+			"StationId": "K223",
+			"Records": {
+				"Horizontal1": "K223.HNE.AK.--_a.smc",
+				"Horizontal2": "K223.HNN.AK.--_a.smc"
+			},
+			"Location": {
+				"Latitude": 61.234,
+				"Longitude": -149.868
+			}
+		}, {
+			"StationId": "2716",
+			"Records": {
+				"Horizontal1": "2017.HN2.NP.0B_a.smc",
+				"Horizontal2": "2017.HN3.NP.0B_a.smc"
+			},
+			"Location": {
+				"Latitude": 61.219,
+				"Longitude": -149.892
+			}
+
+		}, {
+			"StationId": "8038",
+			"Records": {
+				"Horizontal1": "NP8038-n.1000hyfh.HNE.--.acc.V2c",
+				"Horizontal2": "NP8038-n.1000hyfh.HNN.--.acc.V2c"
+			},
+			"Location": {
+				"Latitude": 61.218,
+				"Longitude": -149.883
+			}
+
+		}, {
+			"StationId": "8040",
+			"Records": {
+				"Horizontal1": "8040.HNE.NP.01_a.smc",
+				"Horizontal2": "8040.HNN.NP.02_a.smc"
+			},
+			"Location": {
+				"Latitude": 61.215,
+				"Longitude": -149.893
+			}
+
+		}, {
+			"StationId": "8016",
+			"Records": {
+				"Horizontal1": "8016.HNE.NP.B1_a.smc",
+				"Horizontal2": "8016.HNN.NP.B1_a.smc"
+			},
+			"Location": {
+				"Latitude": 61.192,
+				"Longitude": -149.864
+			}
+
+		}, {
+			"StationId": "8042",
+			"Records": {
+				"Horizontal1": "8042.HNE.NP.01_a.smc",
+				"Horizontal2": "8042.HNN.NP.02_a.smc"
+			},
+			"Location": {
+				"Latitude": 61.188,
+				"Longitude": -149.884
+			}
+
+		}, {
+			"StationId": "8036",
+			"Records": {
+				"Horizontal1": "NP8036-n.1000hyfh.HNE.--.acc.V2c",
+				"Horizontal2": "NP8036-n.1000hyfh.HNN.--.acc.V2c"
+			},
+			"Location": {
+				"Latitude": 61.178,
+				"Longitude": -149.966
+			}
+
+		}, {
+			"StationId": "8030",
+			"Records": {
+				"Horizontal1": "NP8030-n.1000hyfh.HNE.--.acc.V2c",
+				"Horizontal2": "NP8030-n.1000hyfh.HNN.--.acc.V2c"
+			},
+			"Location": {
+				"Latitude": 61.179,
+				"Longitude": -149.806
+			}
+
+		}, {
+			"StationId": "8027",
+			"Records": {
+				"Horizontal1": "NP8027-n.1000hyfh.HNE.--.acc.V2c",
+				"Horizontal2": "NP8027-n.1000hyfh.HNN.--.acc.V2c"
+			},
+			"Location": {
+				"Latitude": 61.161,
+				"Longitude": -149.889
+			}
+
+		}, {
+			"StationId": "8037",
+			"Records": {
+				"Horizontal1": "NP8037-n.1000hyfh.HNE.--.acc.V2c",
+				"Horizontal2": "NP8037-n.1000hyfh.HNN.--.acc.V2c"
+			},
+			"Location": {
+				"Latitude": 61.156,
+				"Longitude": -149.985
+			}
+
+		}, {
+			"StationId": "8021",
+			"Records": {
+				"Horizontal1": "NP8021-n.1000hyfh.HNE.--.acc.V2c",
+				"Horizontal2": "NP8021-n.1000hyfh.HNN.--.acc.V2c"
+			},
+			"Location": {
+				"Latitude": 61.113,
+				"Longitude": -149.910
+			}
+
+		}, {
+			"StationId": "2738",
+			"Records": {
+				"Horizontal1": "NP2738-n.1000hyfh.HNE.--.acc.V2c",
+				"Horizontal2": "NP2738-n.1000hyfh.HNN.--.acc.V2c"
+			},
+			"Location": {
+				"Latitude": 63.389,
+				"Longitude": -148.885
+			}
+
+		}
+	]
+}
