@@ -6,10 +6,7 @@ import csv
 def printBldg(theBldg):
 
     # name
-    #if 'name' in theBldg:
-    print(theBldg['name'],': {')
-    #else:
-    #    print('"Building Name":\t "N/A"')
+    print('"',theBldg['name'],'": {')
 
     # occupancy type
     if 'occupancy' in theBldg:
@@ -48,20 +45,16 @@ def printBldg(theBldg):
         print('\t"Total Floor Area":\t "N/A"')
 
     # polygon
+    print('\t"Coordinates": {')
     if 'polygon' in theBldg:
         if 'coordinates' in theBldg['polygon']:
-            print('\t"Coordinates": {')
             for i in range(0,len(theBldg['polygon']['coordinates'][0])):
-                print('\t\tLong ',i+1,':\t',theBldg['polygon']['coordinates'][0][i][0],',')
-            for i in range(0,len(theBldg['polygon']['coordinates'][0])):
-                if i != (len(theBldg['polygon']['coordinates'][0]) - 1):
-                    print('\t\tLat  ',i+1,':\t',theBldg['polygon']['coordinates'][0][i][1],',')
-                else:
-                    print('\t\tLat  ',i+1,':\t',theBldg['polygon']['coordinates'][0][i][1])
-        else:
-            print('\t"Coordinates":\t\t "N/A"')
-    else:
-        print('\t"Coordinates":\t\t "N/A"')
+                 if i == 0:
+                    print('\t\t[',theBldg['polygon']['coordinates'][0][i][:],',')
+                 elif i == (len(theBldg['polygon']['coordinates'][0]) - 1):
+                     print('\t\t ',theBldg['polygon']['coordinates'][0][i][:],']')
+                 else:
+                    print('\t\t ',theBldg['polygon']['coordinates'][0][i][:],',')
 
     print('\t}')
 
@@ -77,17 +70,6 @@ response = requests.get('https://data.sfgov.org/resource/5kya-mfst.json')
 if(response.status_code == 200):
     #We will convert the response to json 
     tallBuildings = response.json()\
-
-   #someBldg = tallBuildings[0]
-   #for key, value in someBldg.items():
-   #    if 'polygon' in key:
-   #        if 'coordinates' in someBldg['polygon']:
-   #            print('coordinates found')
-   #            for i in range(0,len(someBldg['polygon']['coordinates'][0])):
-   #                print('\tLong ',i+1,':\t\t',someBldg['polygon']['coordinates'][0][i][0])
-   #            for i in range(0,len(someBldg['polygon']['coordinates'][0])):
-   #                print('\tLat  ',i+1,':\t\t',someBldg['polygon']['coordinates'][0][i][1])
-
 
 #Excercise 1: Print to the screen the list of buildings 
 #including relevant information about the building like structure type
